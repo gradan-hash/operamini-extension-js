@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="extension.css">
+	<script src="extension.js"></script>
+	<title></title>
+</head>
+<body>
+<input type="text" id="input-el"><br>
+
+<button id="input-btn">SAVE INPUT</button>
+
+
+<ul id="ul-el"></ul>
+
+<p id="container"></p>
+
+<script type="text/javascript">
+	const el =document.getElementById("input-btn")
+
+el.addEventListener("click", function() {
+  graDan.push(document.getElementById("input-el").value)
+	document.getElementById("input-el").value="";
+	let listitems = " "
+	
+	for(let i =0; i < graDan.length; i++){
+	
+	listitems += "<li><a target= '_blank' href=' "+ graDan[i] + " ' >" + graDan[i] + "</a></li>"
+
+	document.getElementById("ul-el").innerHTML =  listitems 
+	//.localStorage.setItem("graDan",JSON.stringfy(graDan))
+}
+});
+</script>
+
+</body>
+</html>
